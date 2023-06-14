@@ -1,14 +1,16 @@
-import './Button.css';
+import "./Button.css";
 
-import React from 'react';
+import React from "react";
 
-
-interface ButtonProps {
+export interface ButtonProps {
+  primary?: boolean;
+  secondary?: boolean;
   label: string;
+  size?: "small" | "medium" | "large";
 }
 
-export default function Button({ label }: ButtonProps) {
-  return (
-    <button>{label}</button>
-  );
+export function Button(props: ButtonProps) {
+  const { label } = props;
+
+  return <button>{label}</button>;
 }
