@@ -1,4 +1,4 @@
-import styles from './Button.scss';
+import styles from './Button.module.scss';
 console.log({ styles });
 
 import React from 'react';
