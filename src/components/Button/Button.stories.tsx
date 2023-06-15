@@ -1,11 +1,11 @@
-import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
+import React from 'react';
+import { StoryFn, Meta } from '@storybook/react';
 
-import { Button } from "./Button";
+import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Free UI/Button",
+  title: 'Free UI/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
@@ -18,25 +18,25 @@ export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   primary: true,
-  label: "Primary Button",
+  label: 'Primary Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   secondary: true,
-  label: "Secondary Button",
+  label: 'Secondary Button',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   secondary: true,
-  size: "large",
-  label: "Large Button",
+  size: 'large',
+  label: 'Large Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   secondary: true,
-  size: "small",
-  label: "Small Button",
+  size: 'small',
+  label: 'Small Button',
 };

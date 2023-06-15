@@ -1,13 +1,13 @@
-import styles from "./Button.scss";
+import styles from './Button.scss';
 console.log({ styles });
 
-import React from "react";
+import React from 'react';
 
 export interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
   label: string;
-  size?: "small" | "medium" | "large";
+  size?: 'small' | 'medium' | 'large';
 }
 
 export function Button(props: ButtonProps) {
