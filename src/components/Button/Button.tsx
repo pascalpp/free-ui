@@ -1,4 +1,5 @@
-import "./Button.css";
+import styles from "./Button.scss";
+console.log({ styles });
 
 import React from "react";
 
