@@ -3,6 +3,9 @@ const commonjs = require('@rollup/plugin-commonjs');
 const typescript = require('@rollup/plugin-typescript');
 const dts = require('rollup-plugin-dts').default;
 const postcss = require('rollup-plugin-postcss');
+const autoprefixer = require('autoprefixer');
+const stringHash = require('string-hash');
+const cssnano = require('cssnano');
 
 const packageJson = require('./package.json');
 
@@ -24,8 +27,19 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      postcss({
+        plugins: [autoprefixer(), cssnano()],
+        modules: {
+          generateScopedName,
+        },
+      }),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+    ],
+    external: [
+      'react',
+      'react-dom',
+      'react/jsx-runtime',
+      'react/jsx-dev-runtime',
     ],
   },
 
@@ -36,3 +50,8 @@ export default [
     external: [/\.css$/],
   },
 ];
+
+function generateScopedName(name, filename, css) {
+  const hash = stringHash(css).toString(36).substr(0, 6);
+  return `${name}-${hash}`;
+}
